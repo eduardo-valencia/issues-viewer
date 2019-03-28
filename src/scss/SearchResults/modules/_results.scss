@@ -1,0 +1,12 @@
+.results__list {
+  list-style: none;
+}
+
+.results__item {
+  font-size: map-get($font-sizes, 'taller');
+
+  &Btn {
+    background-color: transparent;
+    color: $color-text;
+  }
+}

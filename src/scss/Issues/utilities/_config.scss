@@ -1,0 +1,16 @@
+// Font URLs
+$font-url--lato-montserrat: 'https://fonts.googleapis.com/css?family=Lato|Montserrat:700,900';
+
+// Font Weights
+$font-weights: (
+  bold: 700,
+  black: 900
+);
+
+// Human-Friendly Colors
+$vibrant-red: #ff5555;
+
+// Color Usage
+$color-success: lime;
+$color-danger: $vibrant-red;
+$color-secondary--tint: lighten($color-secondary, 20%);

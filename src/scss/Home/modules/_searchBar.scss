@@ -1,0 +1,38 @@
+#search-bar {
+  @extend %border-radius;
+
+  background-color: $color-tertiary;
+  color: $color-text;
+  $paddingX: 0.5em;
+  $paddingY: 0.6em;
+  padding-left: $paddingX;
+  padding-right: $paddingX;
+  padding-top: $paddingY;
+  padding-bottom: $paddingY;
+}
+
+#search-btn {
+  width: 15%;
+
+  @media (min-width: map-get($breakpoints, 'medium')) {
+    width: 2em;
+  }
+}
+
+#query {
+  border: none;
+  color: $color-text;
+  background-color: transparent;
+  width: 70%;
+  font-size: map-get($font-sizes, 'big');
+  font-family: 'Lato', sans-serif;
+  font-weight: $font-weight--light;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: darken($color-text, 20%);
+  }
+}

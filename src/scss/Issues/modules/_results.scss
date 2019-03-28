@@ -1,0 +1,21 @@
+.issue__title {
+  font-size: map-get($font-sizes, 'big');
+  font-family: 'Lato', sans-serif;
+}
+
+.issue__label {
+  border-radius: 1em;
+  $padding: 0.5em;
+  padding-left: $padding;
+  padding-right: $padding;
+
+  @media (min-width: map-get($breakpoints, 'medium')) {
+    $padding: 1em;
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+}
+
+.issue__author {
+  color: darken($color-text, 20%);
+}

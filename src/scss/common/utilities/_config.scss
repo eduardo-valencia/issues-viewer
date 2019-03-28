@@ -1,0 +1,27 @@
+// Font Weights
+$font-weight--black: 900;
+
+// Human-Friendly Color Names
+$navy-blue: #1a1b41;
+$canary-yellow: #fdca40;
+$violet: #995aff;
+$metal: #5b5b5b;
+$new-metal: #767676;
+
+// Color Usage
+$color-primary: $canary-yellow;
+$color-secondary: $violet;
+$color-tertiary: $metal;
+$color-tertiary--tint: $new-metal;
+$color-text: white;
+$color-text-complementary: $metal;
+$color-background: $navy-blue;
+
+// Font Sizes
+$font-sizes: (
+  giant: 4em,
+  big: 1.7em,
+  taller: 1.3em,
+  average: 1.2em,
+  small: 1em
+);

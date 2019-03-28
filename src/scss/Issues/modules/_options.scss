@@ -1,0 +1,6 @@
+.options__label {
+  font-size: map-get($font-sizes, 'big');
+  color: black;
+  font-weight: map-get($font-weights, 'bold');
+  font-family: 'Montserrat', sans-serif;
+}

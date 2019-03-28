@@ -1,0 +1,11 @@
+p,
+h1,
+h2,
+li {
+  color: white;
+}
+
+p {
+  font-size: map-get($font-sizes, 'average');
+  font-family: 'Lato', sans-serif;
+}
