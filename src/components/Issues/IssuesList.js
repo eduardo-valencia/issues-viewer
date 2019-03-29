@@ -21,7 +21,7 @@ export class IssuesList extends Component {
     if (issues.length) {
       return issues.map(this.createIssue)
     }
-    return 'No issues found for this project.'
+    return <p className="text-white">No issues found for this project.</p>
   }
 
   render() {

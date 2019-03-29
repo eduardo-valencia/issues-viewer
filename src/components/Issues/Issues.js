@@ -2,14 +2,13 @@ import React, { Component } from 'react'
 import Layout from '../Layout/Layout'
 import getData from '../common/requests'
 import IssuesList from './IssuesList'
-import Filters from './SearchOptions/Filters'
 import '../../scss/Issues/utilities/manifest.scss'
+import SearchOptions from './SearchOptions/SearchOptions'
 
 export class Issues extends Component {
   state = {
-    issues: null,
-    labels: null,
-    hasLoaded: false
+    hasLoaded: false,
+    issues: []
   }
 
   getRepoAndOwner = () => {
@@ -27,7 +26,6 @@ export class Issues extends Component {
   }
 
   addDataToState = data => {
-    console.log(data)
     const { issues, labels } = data.data.repository
     this.setState(prevState => ({
       ...prevState,
@@ -35,14 +33,6 @@ export class Issues extends Component {
       labels: labels.edges,
       hasLoaded: true
     }))
-  }
-
-  makeLabelsFiltersAsQuery = labelsFilters => {
-    return `labels:["${labelsFilters.join('", "')}"]`
-  }
-
-  makeStatusFilter = statusFilter => {
-    return `states:${statusFilter}`
   }
 
   makeFiltersIntoQuery = (labelsFilters = null, statusFilter = null) => {
@@ -66,16 +56,16 @@ export class Issues extends Component {
     return `, ${queryArguments.join(', ')}`
   }
 
-  getQuery = (labelsFilters = null, statusFilter = null) => {
+  makeCustomParam = (name, value) => `${name}:${value}`
+
+  makeCustomParams = params => `, ${params.join(', ')}`
+
+  getQuery = customParams => {
     const { repository, owner } = this.props.match.params
-    let filters = ''
-    if (labelsFilters || statusFilter) {
-      filters = this.makeFiltersIntoQuery(labelsFilters, statusFilter)
-    }
     return `
     query {
       repository(name:"${repository}", owner:"${owner}") {
-        issues(orderBy: { direction:DESC, field:UPDATED_AT }, first:10${filters}) {
+        issues(first:10${customParams}) {
           edges {
             node {
               author {
@@ -107,8 +97,8 @@ export class Issues extends Component {
     `
   }
 
-  getIssuesAndRepoLabels = (labelsFilters = null, statusFilters = null) => {
-    const query = this.getQuery(labelsFilters, statusFilters)
+  getIssuesAndRepoLabels = (params = '') => {
+    const query = this.getQuery(params)
     getData(query, this.addDataToState)
   }
 
@@ -423,11 +413,16 @@ export class Issues extends Component {
         <h2>Issues List</h2>
         {hasLoaded ? (
           <>
-            <Filters labels={labels} getIssues={this.getIssuesAndRepoLabels} />
+            <SearchOptions
+              labels={labels}
+              getIssues={this.getIssuesAndRepoLabels}
+              makeCustomParam={this.makeCustomParam}
+              makeCustomParams={this.makeCustomParams}
+            />
             <IssuesList issues={issues} />
           </>
         ) : (
-          'Loading...'
+          <p className="text-white mt-3">Loading...</p>
         )}
       </Layout>
     )

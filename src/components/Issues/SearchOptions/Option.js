@@ -5,7 +5,7 @@ export class Option extends Component {
   render() {
     const { children, name } = this.props
     return (
-      <div className="mb-3">
+      <div className="mb-5">
         <p className="options__label">{name}</p>
         <hr />
         {children}

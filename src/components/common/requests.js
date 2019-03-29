@@ -8,7 +8,10 @@ export default function getData(query, useData) {
   })
   instance
     .post('https://api.github.com/graphql', { query: query })
-    .then(response => useData(response.data))
+    .then(response => {
+      console.log(response.data)
+      useData(response.data)
+    })
     .catch(error => {
       console.log(error)
     })

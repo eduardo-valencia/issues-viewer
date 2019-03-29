@@ -4,3 +4,17 @@
   font-weight: map-get($font-weights, 'bold');
   font-family: 'Montserrat', sans-serif;
 }
+
+.options__submit {
+  background-color: $color-secondary;
+  font-size: map-get($font-sizes, 'taller');
+}
+
+@mixin option__btn($color) {
+  background-color: $color;
+
+  &--active {
+    background-color: darken($color, 20%);
+    text-decoration: underline;
+  }
+}

@@ -7,7 +7,7 @@ export class Label extends Component {
     const { name } = label.node
     const id = `label-${index}`
     return (
-      <label htmlFor={id} className="label__name" key={index}>
+      <label htmlFor={id} className="position-relative d-block" key={index}>
         <input
           type="checkbox"
           aria-label="Label checkbox."
@@ -15,7 +15,8 @@ export class Label extends Component {
           className="label__input"
           id={id}
         />
-        <span className="label__checkmark">{name}</span>
+        <span className="label__checkmark" />
+        <p className="label__name mb-0">{name}</p>
       </label>
     )
   }

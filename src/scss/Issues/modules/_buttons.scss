@@ -1,0 +1,16 @@
+.btn-c-primary {
+  background-color: $color-primary;
+}
+
+.btn-c-secondary {
+  background-color: $color-secondary;
+}
+
+.btn-c-tertiary {
+  background-color: $color-tertiary;
+
+  &--active {
+    background-color: darken($color-tertiary, 20%);
+    text-decoration: underline;
+  }
+}

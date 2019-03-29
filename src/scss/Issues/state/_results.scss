@@ -1,7 +1,13 @@
-.issue__status--open {
-  color: $color-success;
+@mixin darkenAndUnderline($color) {
+  background-color: darken($color, 30%);
+  text-decoration: underline;
+  color: white;
 }
 
-.issue__status--closed {
-  color: $color-danger;
+.issue__statusOpen--active {
+  @include darkenAndUnderline($color-success);
+}
+
+.issue__statusClosed--active {
+  @include darkenAndUnderline($color-danger);
 }

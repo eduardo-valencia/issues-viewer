@@ -19,3 +19,11 @@
 .issue__author {
   color: darken($color-text, 20%);
 }
+
+.issue__openBtn {
+  @include option__btn($color-success);
+}
+
+.issue__closeBtn {
+  @include option__btn($color-danger);
+}

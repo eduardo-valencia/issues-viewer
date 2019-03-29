@@ -5,9 +5,9 @@ export class OptionsContainer extends Component {
   render() {
     const { children, name, id } = this.props
     return (
-      <div className="dropdown">
+      <div className="dropdown mr-3">
         <button
-          className="btn dropdown-toggle option"
+          className="btn dropdown-toggle option btn-c-primary"
           type="button"
           id={id}
           data-toggle="dropdown"
