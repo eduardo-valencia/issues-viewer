@@ -4,7 +4,7 @@ import Issue from './Issue'
 
 export class IssuesList extends Component {
   createIssue = (issueInfo, index) => {
-    const { author, closed, title, labels } = issueInfo.node
+    const { author, closed, title, labels, url } = issueInfo.node
     return (
       <Issue
         title={title}
@@ -12,6 +12,7 @@ export class IssuesList extends Component {
         author={author.login}
         status={!closed}
         key={index}
+        url={url}
       />
     )
   }

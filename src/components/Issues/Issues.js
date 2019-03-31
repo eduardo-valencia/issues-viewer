@@ -73,6 +73,7 @@ export class Issues extends Component {
               }
               closed
               title
+              url
               labels(first:2) {
                 edges {
                   node {
@@ -111,23 +112,38 @@ export class Issues extends Component {
               {
                 node: {
                   author: {
-                    login: 'MarshallOfSound'
+                    login: 'StringKe'
                   },
                   closed: false,
                   title:
-                    'autoUpdater does not work when have authenticated proxy',
+                    "app.getPath('pepperFlashSystemPlugin') exception !!!!",
+                  url: 'https://github.com/electron/electron/issues/17603',
+                  labels: {
+                    edges: []
+                  }
+                }
+              },
+              {
+                node: {
+                  author: {
+                    login: 'amarpatel'
+                  },
+                  closed: false,
+                  title:
+                    'shell.openExternal(..., {activate:false}) opens in foreground',
+                  url: 'https://github.com/electron/electron/issues/12492',
                   labels: {
                     edges: [
                       {
                         node: {
-                          color: 'fbca04',
-                          name: 'bug :beetle:'
+                          color: '8d9ee8',
+                          name: '3-1-x'
                         }
                       },
                       {
                         node: {
-                          color: 'f9d0c4',
-                          name: 'component/auto-updater'
+                          color: 'fbca04',
+                          name: 'bug :beetle:'
                         }
                       }
                     ]
@@ -137,22 +153,11 @@ export class Issues extends Component {
               {
                 node: {
                   author: {
-                    login: 'Lukypie'
-                  },
-                  closed: true,
-                  title: '144Hz scrolling support on Linux',
-                  labels: {
-                    edges: []
-                  }
-                }
-              },
-              {
-                node: {
-                  author: {
-                    login: 'Stoyvo'
+                    login: 'jmshal'
                   },
                   closed: false,
-                  title: 'CMD+R Event not captured',
+                  title: 'BrowserWindow vibrancy is lost after reload',
+                  url: 'https://github.com/electron/electron/issues/8310',
                   labels: {
                     edges: [
                       {
@@ -163,8 +168,8 @@ export class Issues extends Component {
                       },
                       {
                         node: {
-                          color: 'fbca04',
-                          name: 'bug :beetle:'
+                          color: '8d9ee8',
+                          name: '5-0-x'
                         }
                       }
                     ]
@@ -174,17 +179,23 @@ export class Issues extends Component {
               {
                 node: {
                   author: {
-                    login: 'ogadit'
+                    login: 'PalmerAL'
                   },
-                  closed: true,
-                  title:
-                    "Failed at the electron@1.4.13 postinstall script 'node install.js'",
+                  closed: false,
+                  title: "BrowserViews sometimes don't recieve mouse events",
+                  url: 'https://github.com/electron/electron/issues/14038',
                   labels: {
                     edges: [
                       {
                         node: {
-                          color: '89093e',
-                          name: 'blocked/need-info ❌'
+                          color: '8d9ee8',
+                          name: '2-0-x'
+                        }
+                      },
+                      {
+                        node: {
+                          color: '8d9ee8',
+                          name: '3-0-x'
                         }
                       }
                     ]
@@ -194,17 +205,17 @@ export class Issues extends Component {
               {
                 node: {
                   author: {
-                    login: 'FHGDev'
+                    login: 'M0rious'
                   },
-                  closed: true,
-                  title:
-                    'TypeError: Electron.BrowserWindow is not a constructor',
+                  closed: false,
+                  title: 'Electron crashes when restarting application',
+                  url: 'https://github.com/electron/electron/issues/17438',
                   labels: {
                     edges: [
                       {
                         node: {
-                          color: '89093e',
-                          name: 'blocked/need-info ❌'
+                          color: '8d9ee8',
+                          name: '4-1-x'
                         }
                       },
                       {
@@ -220,36 +231,51 @@ export class Issues extends Component {
               {
                 node: {
                   author: {
-                    login: 'vladimiry'
+                    login: 'wellbeck190'
                   },
                   closed: false,
-                  title:
-                    'loadURL / loadFile calls throw "ERR_ABORTED (-3) error" if location.hash or history.pushState called on the page before page loaded',
+                  title: "React Devtools can't connect in v5.0.0",
+                  url: 'https://github.com/electron/electron/issues/17586',
                   labels: {
-                    edges: [
-                      {
-                        node: {
-                          color: '8d9ee8',
-                          name: '5-0-x'
-                        }
-                      },
-                      {
-                        node: {
-                          color: 'fbca04',
-                          name: 'bug :beetle:'
-                        }
-                      }
-                    ]
+                    edges: []
                   }
                 }
               },
               {
                 node: {
                   author: {
-                    login: 'tcd156'
+                    login: 'jackple'
                   },
                   closed: false,
-                  title: 'AudioThread Taking over Webcam',
+                  title: 'video play only sound but no picture',
+                  url: 'https://github.com/electron/electron/issues/17607',
+                  labels: {
+                    edges: []
+                  }
+                }
+              },
+              {
+                node: {
+                  author: {
+                    login: 'robatwilliams'
+                  },
+                  closed: false,
+                  title: "'second-instance' event documentation clarification",
+                  url: 'https://github.com/electron/electron/issues/17604',
+                  labels: {
+                    edges: []
+                  }
+                }
+              },
+              {
+                node: {
+                  author: {
+                    login: 'harryi3t'
+                  },
+                  closed: false,
+                  title:
+                    'Deleting a single cookie deletes multiple cookies where the URLs are subset of given URL',
+                  url: 'https://github.com/electron/electron/issues/13557',
                   labels: {
                     edges: [
                       {
@@ -271,60 +297,11 @@ export class Issues extends Component {
               {
                 node: {
                   author: {
-                    login: 'bitdisaster'
+                    login: 'sachinjain024'
                   },
                   closed: false,
-                  title: 'netlog properties are not properties',
-                  labels: {
-                    edges: [
-                      {
-                        node: {
-                          color: '8d9ee8',
-                          name: '3-1-x'
-                        }
-                      },
-                      {
-                        node: {
-                          color: 'fbca04',
-                          name: 'bug :beetle:'
-                        }
-                      }
-                    ]
-                  }
-                }
-              },
-              {
-                node: {
-                  author: {
-                    login: 'DictumMortuum'
-                  },
-                  closed: false,
-                  title: 'Background color is slightly off in electron apps',
-                  labels: {
-                    edges: [
-                      {
-                        node: {
-                          color: '8d9ee8',
-                          name: '3-1-x'
-                        }
-                      },
-                      {
-                        node: {
-                          color: 'fbca04',
-                          name: 'bug :beetle:'
-                        }
-                      }
-                    ]
-                  }
-                }
-              },
-              {
-                node: {
-                  author: {
-                    login: 'UoToGK'
-                  },
-                  closed: true,
-                  title: 'Create and Closed Webview, Memory Increase',
+                  title: 'Electron webRequest APIs vs Chrome webRequest APIs',
+                  url: 'https://github.com/electron/electron/issues/17602',
                   labels: {
                     edges: []
                   }

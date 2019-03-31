@@ -5,9 +5,11 @@ export class Result extends Component {
   render() {
     const { repoName, selectRepo, selectedRepo } = this.props
     const selectCurrentRepo = () => selectRepo(repoName)
-    let btnClasses = 'btn results__itemBtn'
+    let btnClasses = 'btn '
     if (selectedRepo === repoName) {
-      btnClasses += '--active'
+      btnClasses += 'btn-c-primary'
+    } else {
+      btnClasses += 'results__itemBtn'
     }
 
     return (

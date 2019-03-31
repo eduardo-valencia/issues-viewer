@@ -54,6 +54,7 @@ export class SearchOptions extends Component {
       const value = option[1]
       const defaultOptions = this.getDefaultOptions()
       const defaultValue = defaultOptions[type][name]
+      console.log(`value is ${value} and default value is ${defaultValue}`)
       return !(value !== defaultValue)
     })
   }
@@ -91,10 +92,17 @@ export class SearchOptions extends Component {
     return makeCustomParams(optionParams)
   }
 
+  optionsHaveChanged = () => {
+    const defaultOptions = this.getDefaultOptions()
+    if (defaultOptions !== this.state) {
+      return true
+    }
+    return false
+  }
+
   updateIssues = () => {
-    const changedOptions = this.getChangedOptions()
-    console.log(changedOptions)
-    if (changedOptions.length) {
+    if (this.optionsHaveChanged()) {
+      const changedOptions = this.getChangedOptions()
       const joinedParams = this.joinParams(changedOptions)
       const { getIssues } = this.props
       getIssues(joinedParams)

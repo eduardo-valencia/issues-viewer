@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
 import Layout from '../Layout/Layout'
-import Footer from './Footer'
-import Search from './Search'
+import Search from '../common/Search'
 import '../../scss/Home/utilities/manifest.scss'
 
 export class Home extends Component {
   render() {
     return (
-      <Layout title="Home">
-        <Search />
-        <Footer />
+      <Layout title="Home" showSearchBar={false}>
+        <Search size="large" />
       </Layout>
     )
   }

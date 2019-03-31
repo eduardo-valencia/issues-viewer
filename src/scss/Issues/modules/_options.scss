@@ -6,6 +6,7 @@
 }
 
 .options__submit {
+  @include darkenBtnOnHover($color-secondary);
   background-color: $color-secondary;
   font-size: map-get($font-sizes, 'taller');
 }

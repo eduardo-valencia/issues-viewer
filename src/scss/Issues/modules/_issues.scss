@@ -22,8 +22,18 @@
 
 .issue__openBtn {
   @include option__btn($color-success);
+  @include darkenBtnOnHover($color-success);
 }
 
 .issue__closeBtn {
   @include option__btn($color-danger);
+  @include darkenBtnOnHover($color-danger);
+}
+
+.issue__statusOpen {
+  color: $color-success;
+}
+
+.issue__statusClosed {
+  color: $color-danger;
 }

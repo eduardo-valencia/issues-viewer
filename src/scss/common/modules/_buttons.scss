@@ -1,0 +1,15 @@
+@mixin darkenBtnOnHover($color) {
+  &:hover {
+    background-color: darken($color, 20%);
+  }
+}
+
+.btn-c-primary {
+  @include darkenBtnOnHover($color-primary);
+  background-color: $color-primary;
+}
+
+.btn-c-secondary {
+  @include darkenBtnOnHover($color-secondary);
+  background-color: $color-secondary;
+}

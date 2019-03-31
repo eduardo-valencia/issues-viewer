@@ -1,0 +1,15 @@
+#search-bar {
+  padding: 0;
+}
+
+%queryFont {
+  font-size: map-get($font-sizes, 'average');
+}
+#query {
+  @extend %queryFont;
+  padding: 0;
+}
+
+.search__btn {
+  @extend %queryFont;
+}

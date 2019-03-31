@@ -5,7 +5,10 @@ import PropTypes from 'prop-types'
 export class Buttons extends Component {
   getDisabledSelectBtn = () => {
     return (
-      <button disabled="disabled" className="btn buttons__select--disabled">
+      <button
+        disabled="disabled"
+        className="btn buttons__select--disabled text-dark"
+      >
         Select
       </button>
     )
@@ -14,7 +17,10 @@ export class Buttons extends Component {
   getDefaultSelectBtn = () => {
     const { selectedRepo } = this.props
     return (
-      <Link to={`/issues/${selectedRepo}`} className="btn buttons__select">
+      <Link
+        to={`/issues/${selectedRepo}`}
+        className="btn btn-c-primary text-dark"
+      >
         Select
       </Link>
     )
@@ -32,7 +38,7 @@ export class Buttons extends Component {
     return (
       <div className="buttons__container py-3 mt-3">
         <div className="container d-flex justify-content-between">
-          <Link to="/" className="btn buttons__back">
+          <Link to="/" className="btn btn-c-secondary text-white">
             Back
           </Link>
           {this.getSelectButton()}
