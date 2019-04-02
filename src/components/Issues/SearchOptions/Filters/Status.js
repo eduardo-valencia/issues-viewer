@@ -45,7 +45,7 @@ export class Status extends Component {
 
 Status.propTypes = {
   setOpenOrClosed: PropTypes.func.isRequired,
-  filterByOpen: PropTypes.bool.isRequired
+  filterByOpen: PropTypes.bool
 }
 
 export default Status

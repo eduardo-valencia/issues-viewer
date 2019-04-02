@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import NextissuesBtn from './NextissuesBtn'
 import Issue from './Issue'
 
 export class IssuesList extends Component {
@@ -26,12 +27,23 @@ export class IssuesList extends Component {
   }
 
   render() {
-    return <div className="mt-4">{this.createIssuesComponents()}</div>
+    const { pageInfo, getAndAppendIssues } = this.props
+    return (
+      <div className="mt-4">
+        {this.createIssuesComponents()}
+        <NextissuesBtn
+          pageInfo={pageInfo}
+          getAndAppendIssues={getAndAppendIssues}
+        />
+      </div>
+    )
   }
 }
 
 IssuesList.propTypes = {
-  issues: PropTypes.array.isRequired
+  issues: PropTypes.array.isRequired,
+  pageInfo: PropTypes.object.isRequired,
+  getAndAppendIssues: PropTypes.func.isRequired
 }
 
 export default IssuesList

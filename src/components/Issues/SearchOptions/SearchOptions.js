@@ -7,7 +7,7 @@ export class SearchOptions extends Component {
   getDefaultOptions = () => ({
     filters: {
       selectedLabels: [],
-      status: null
+      status: true
     },
     sortingOptions: {
       order: 'DESC'
@@ -54,7 +54,6 @@ export class SearchOptions extends Component {
       const value = option[1]
       const defaultOptions = this.getDefaultOptions()
       const defaultValue = defaultOptions[type][name]
-      console.log(`value is ${value} and default value is ${defaultValue}`)
       return !(value !== defaultValue)
     })
   }
@@ -134,7 +133,8 @@ SearchOptions.propTypes = {
   labels: PropTypes.any,
   getIssues: PropTypes.func.isRequired,
   makeCustomParam: PropTypes.func.isRequired,
-  makeCustomParams: PropTypes.func.isRequired
+  makeCustomParams: PropTypes.func.isRequired,
+  addParamsBuilder: PropTypes.func.isRequired
 }
 
 export default SearchOptions
