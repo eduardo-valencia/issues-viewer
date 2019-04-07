@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import NextissuesBtn from './NextissuesBtn'
+import NextIssuesBtn from './NextissuesBtn'
 import Issue from './Issue'
 
 export class IssuesList extends Component {
@@ -31,7 +31,7 @@ export class IssuesList extends Component {
     return (
       <div className="mt-4">
         {this.createIssuesComponents()}
-        <NextissuesBtn
+        <NextIssuesBtn
           pageInfo={pageInfo}
           getAndAppendIssues={getAndAppendIssues}
         />

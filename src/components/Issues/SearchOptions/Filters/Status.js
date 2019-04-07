@@ -34,7 +34,7 @@ export class Status extends Component {
 
   render() {
     return (
-      <Option name="Status">
+      <Option name="Status" classes="mb-5">
         <div className="d-flex justify-content-between">
           {this.createOpenAndCloseBtns()}
         </div>

@@ -6,7 +6,7 @@ export class SubmitOptionBtn extends Component {
     const { name, updateIssues } = this.props
     return (
       <button
-        className="btn options__submit px-5 w-100 text-white"
+        className="btn options__submit px-5 w-100 text-white mt-4"
         onClick={updateIssues}
       >
         {name}

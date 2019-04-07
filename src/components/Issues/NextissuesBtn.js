@@ -1,29 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { makeCustomParam, makeCustomParams } from './query'
 
-function buildNextIssuesParams(nextIssuesPosition) {
-  return makeCustomParam('after', `"${nextIssuesPosition}"`)
-}
+export default class NextIssuesBtn extends Component {
+  render() {
+    const { getAndAppendIssues } = this.props
+    const { hasNextPage } = this.props.pageInfo
 
-function getMoreIssues(nextIssuesPosition, getAndAppendIssues) {
-  const params = makeCustomParams([buildNextIssuesParams(nextIssuesPosition)])
-  getAndAppendIssues(params)
-}
-
-export default function NextIssuesBtn(props) {
-  const { getAndAppendIssues } = props
-  const { hasNextPage, endCursor } = props.pageInfo
-  const getIssuesWithInfo = () => getMoreIssues(endCursor, getAndAppendIssues)
-  return (
-    <button
-      className="btn btn-c-secondary text-white"
-      disabled={!hasNextPage}
-      onClick={getIssuesWithInfo}
-    >
-      View More
-    </button>
-  )
+    return (
+      <button
+        className="btn btn-c-secondary text-white"
+        disabled={!hasNextPage}
+        onClick={getAndAppendIssues}
+      >
+        View More
+      </button>
+    )
+  }
 }
 
 NextIssuesBtn.propTypes = {

@@ -1,59 +1,27 @@
 import React, { Component } from 'react'
 import Layout from '../Layout/Layout'
 import getData from '../common/requests'
-import IssuesList from './IssuesList'
 import '../../scss/Issues/utilities/manifest.scss'
-import SearchOptions from './SearchOptions/SearchOptions'
 import getExampleQuery from './exampleQuery'
-import makeCustomParams from './query'
+import QueryController from './QueryController'
 
 export class Issues extends Component {
   state = {
     hasLoaded: false,
     issues: [],
     labels: [],
-    pageInfo: null,
-    queryInfo: {
-      paramsBuilders: [],
-      dataHandler: null
-    }
+    pageInfo: null
   }
 
-  combineParams = () => {
-    const { paramsBuilders } = this.state.queryInfo
-    let combinedParams = []
-    paramsBuilders.forEach(builder => {
-      const params = builder()
-      combinedParams = [...combinedParams, ...params]
-    })
-    return makeCustomParams(combinedParams)
-  }
-
-  sendQuery = () => {
-    const { useData } = this.state
-    const combinedParams = this.combineParams()
-    this.getIssues(combinedParams, useData, false)
-  }
-
-  addParamsBuilder = paramsBuilder => {
-    this.setState(prevState => ({
-      ...prevState,
-      queryInfo: {
-        ...prevState.queryInfo,
-        paramsBuilders: [...prevState.paramsBuilders, paramsBuilder]
-      }
-    }))
-  }
-
-  setDataHandler = dataHandler => {
-    this.setState(prevState => ({
-      ...prevState,
-      queryInfo: {
-        ...prevState.queryInfo,
-        dataHandler: dataHandler
-      }
-    }))
-  }
+  // combineParams = () => {
+  //   const { paramsBuilders } = this.state.queryInfo
+  //   let combinedParams = []
+  //   paramsBuilders.forEach(builder => {
+  //     const params = builder()
+  //     combinedParams = [...combinedParams, ...params]
+  //   })
+  //   return combinedParams.length ? makeCustomParams(combinedParams) : false
+  // }
 
   getRepoAndOwner = () => {
     const { repository, owner } = this.props.match.params
@@ -80,16 +48,12 @@ export class Issues extends Component {
     }))
   }
 
-  makeCustomParam = (name, value) => `${name}:${value}`
-
-  makeCustomParams = params => `, ${params.join(', ')}`
-
-  getQuery = (customParams, getLabels = true) => {
+  getQuery = (getLabels = true, params = '') => {
     const { repository, owner } = this.props.match.params
     return `
     query {
       repository(name:"${repository}", owner:"${owner}") {
-        issues(first:10${customParams}) {
+        issues(first:10${params}) {
           pageInfo {
             endCursor
             hasNextPage
@@ -132,10 +96,10 @@ export class Issues extends Component {
 
   getIssues = (
     params = '',
-    useData = this.addDataToState,
-    getLabels = true
+    getLabels = true,
+    useData = this.addDataToState
   ) => {
-    const query = this.getQuery(params)
+    const query = this.getQuery(getLabels, params)
     getData(query, useData, getLabels)
   }
 
@@ -157,28 +121,22 @@ export class Issues extends Component {
   }
 
   getAndAppendIssues = (params = '') => {
-    this.getIssues(params, this.appendIssuesFromData, false)
+    this.getIssues(params, false, this.appendIssuesFromData)
   }
 
   render() {
-    const { hasLoaded, issues, labels, pageInfo } = this.state
+    const { hasLoaded, issues, pageInfo, labels } = this.state
     return (
       <Layout title="Issues" subtitle={this.getPageSubtitle()}>
         <h2>Issues List</h2>
         {hasLoaded ? (
-          <>
-            <SearchOptions
-              labels={labels}
-              getIssues={this.getIssues}
-              makeCustomParam={this.makeCustomParam}
-              makeCustomParams={this.makeCustomParams}
-            />
-            <IssuesList
-              issues={issues}
-              pageInfo={pageInfo}
-              getAndAppendIssues={this.getAndAppendIssues}
-            />
-          </>
+          <QueryController
+            getIssues={this.getIssues}
+            labels={labels}
+            issues={issues}
+            pageInfo={pageInfo}
+            getAndAppendIssues={this.getAndAppendIssues}
+          />
         ) : (
           <p className="text-white mt-3">Loading...</p>
         )}

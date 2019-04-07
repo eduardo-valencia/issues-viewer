@@ -44,7 +44,7 @@ export class SortOrderBtns extends Component {
 
   render() {
     return (
-      <div className="mb-5 d-flex justify-content-between">
+      <div className="d-flex justify-content-between">
         {this.getSortOptions()}
       </div>
     )

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 
 export class Option extends Component {
   render() {
-    const { children, name } = this.props
+    const { children, name, classes } = this.props
     return (
-      <div className="mb-5">
+      <div className={classes}>
         <p className="options__label">{name}</p>
         <hr />
         {children}
@@ -15,7 +15,8 @@ export class Option extends Component {
 }
 
 Option.propTypes = {
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  classes: PropTypes.string
 }
 
 export default Option
