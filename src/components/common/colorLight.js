@@ -21,5 +21,5 @@ export const isDarkColor = hex => {
 
 export const getTextClassByBgColor = hex => {
   const hasDarkBg = isDarkColor(hex)
-  return hasDarkBg ? 'text-body' : 'text-white'
+  return hasDarkBg ? 'text-white' : 'text-body'
 }
