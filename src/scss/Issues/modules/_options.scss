@@ -22,7 +22,7 @@
 }
 
 // Dropdown menu for label
-.dropdown-menu {
+.options__dropdown {
   width: 90vw;
 
   @media (min-width: map-get($breakpoints, 'medium')) {

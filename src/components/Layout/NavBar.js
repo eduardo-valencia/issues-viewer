@@ -4,7 +4,7 @@ import Search from '../common/Search'
 import { Link } from 'react-router-dom'
 
 export default function NavBar(props) {
-  const { showSearchBar } = props
+  const { showSearchBar, children } = props
   return (
     <nav className="navbar navbar-expand-lg navbar-dark container">
       <button
@@ -29,6 +29,7 @@ export default function NavBar(props) {
         </ul>
         {showSearchBar === false ? null : <Search />}
       </div>
+      {children}
     </nav>
   )
 }

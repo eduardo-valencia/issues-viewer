@@ -10,11 +10,14 @@ export class Layout extends Component {
       children,
       subtitle,
       outsideContainer,
-      showSearchBar
+      showSearchBar,
+      navBarContents
     } = this.props
     return (
       <>
-        <NavBar showSearchBar={showSearchBar} />
+        <NavBar showSearchBar={showSearchBar}>
+          {navBarContents ? navBarContents : null}
+        </NavBar>
         <div className="container py-5 px-4">
           <h1 id="page-title">{title}</h1>
           {subtitle ? <h2 id="page-subtitle">{subtitle}</h2> : null}

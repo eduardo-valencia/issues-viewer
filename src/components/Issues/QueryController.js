@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { makeCustomParam, makeCustomParams } from './query'
+import { makeCustomParam, makeCustomParams } from '../common/query'
 import PropTypes from 'prop-types'
 import SearchOptions from './SearchOptions/SearchOptions'
 import IssuesList from './IssuesList'

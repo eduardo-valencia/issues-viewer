@@ -1,0 +1,9 @@
+#page-title {
+  font-size: map-get($font-sizes, 'big');
+  font-weight: $font-weight--black;
+  font-family: 'Monterrat', sans-serif;
+
+  @media (min-width: map-get($breakpoints, 'medium')) {
+    font-size: map-get($font-sizes, 'giant');
+  }
+}

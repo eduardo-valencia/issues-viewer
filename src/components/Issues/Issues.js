@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Layout from '../Layout/Layout'
 import getData from '../common/requests'
 import '../../scss/Issues/utilities/manifest.scss'
-import getExampleQuery from './exampleQuery'
+// import getExampleQuery from './exampleQuery'
 import QueryController from './QueryController'
 
 export class Issues extends Component {
@@ -12,16 +12,6 @@ export class Issues extends Component {
     labels: [],
     pageInfo: null
   }
-
-  // combineParams = () => {
-  //   const { paramsBuilders } = this.state.queryInfo
-  //   let combinedParams = []
-  //   paramsBuilders.forEach(builder => {
-  //     const params = builder()
-  //     combinedParams = [...combinedParams, ...params]
-  //   })
-  //   return combinedParams.length ? makeCustomParams(combinedParams) : false
-  // }
 
   getRepoAndOwner = () => {
     const { repository, owner } = this.props.match.params
@@ -66,6 +56,7 @@ export class Issues extends Component {
               closed
               title
               url
+              id
               labels(first:2) {
                 edges {
                   node {
@@ -103,12 +94,12 @@ export class Issues extends Component {
     getData(query, useData, getLabels)
   }
 
-  addStaticData = () => {
-    this.addDataToState(getExampleQuery())
-  }
+  // addStaticData = () => {
+  //   this.addDataToState(getExampleQuery())
+  // }
 
   componentDidMount() {
-    this.addStaticData()
+    this.getIssues()
   }
 
   appendIssuesFromData = data => {

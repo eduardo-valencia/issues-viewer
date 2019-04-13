@@ -36,7 +36,7 @@ SearchOptions.propTypes = {
   getIssues: PropTypes.func.isRequired,
   setSortingOptions: PropTypes.func.isRequired,
   setFilters: PropTypes.func.isRequired,
-  filters: PropTypes.array
+  filters: PropTypes.object
 }
 
 export default SearchOptions

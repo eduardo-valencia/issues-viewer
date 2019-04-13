@@ -1,0 +1,6 @@
+.issueInfo__dropdown {
+  width: 75vw;
+  @media (min-width: map-get($map: $breakpoints, $key: 'medium')) {
+    width: 30em;
+  }
+}

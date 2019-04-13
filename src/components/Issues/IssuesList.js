@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import NextIssuesBtn from './NextissuesBtn'
+import MoreDataBtn from '../common/MoreDataBtn'
 import Issue from './Issue'
 
 export class IssuesList extends Component {
   createIssue = (issueInfo, index) => {
-    const { author, closed, title, labels, url } = issueInfo.node
+    const { author, closed, title, labels, id } = issueInfo.node
     return (
       <Issue
         title={title}
@@ -13,7 +13,7 @@ export class IssuesList extends Component {
         author={author.login}
         status={!closed}
         key={index}
-        url={url}
+        id={id}
       />
     )
   }
@@ -31,9 +31,9 @@ export class IssuesList extends Component {
     return (
       <div className="mt-4">
         {this.createIssuesComponents()}
-        <NextIssuesBtn
+        <MoreDataBtn
           pageInfo={pageInfo}
-          getAndAppendIssues={getAndAppendIssues}
+          getAndAppendData={getAndAppendIssues}
         />
       </div>
     )

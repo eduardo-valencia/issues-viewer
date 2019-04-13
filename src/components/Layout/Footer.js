@@ -7,6 +7,7 @@ export default function Footer() {
         <a href="https://icons8.com/icon/132/search" className="text-white">
           Search icon by Icons8
         </a>
+        <a href="https://icons8.com/icon/3156/info">Info icon by Icons8</a>
       </div>
     </footer>
   )

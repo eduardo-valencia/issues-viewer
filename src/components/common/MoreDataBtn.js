@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-export default class NextIssuesBtn extends Component {
+export default class MoreDataBtn extends Component {
   render() {
-    const { getAndAppendIssues } = this.props
+    const { getAndAppendData } = this.props
     const { hasNextPage } = this.props.pageInfo
 
     return (
       <button
         className="btn btn-c-secondary text-white"
         disabled={!hasNextPage}
-        onClick={getAndAppendIssues}
+        onClick={getAndAppendData}
       >
         View More
       </button>
@@ -18,7 +18,7 @@ export default class NextIssuesBtn extends Component {
   }
 }
 
-NextIssuesBtn.propTypes = {
-  getAndAppendIssues: PropTypes.func.isRequired,
+MoreDataBtn.propTypes = {
+  getAndAppendData: PropTypes.func.isRequired,
   pageInfo: PropTypes.object.isRequired
 }

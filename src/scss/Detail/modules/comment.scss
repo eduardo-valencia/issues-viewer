@@ -1,0 +1,19 @@
+%color-primary {
+  color: $color-primary;
+}
+
+.comment__name {
+  @extend %color-primary;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: map-get($font-weights, 'bold');
+}
+
+.comment__date {
+  @extend %color-primary;
+  color: $color-primary;
+}
+
+.comment__container {
+  background-color: lighten($color-background, 10%);
+  overflow-y: scroll;
+}

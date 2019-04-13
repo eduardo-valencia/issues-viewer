@@ -16,7 +16,10 @@ export class OptionsContainer extends Component {
         >
           {name}
         </button>
-        <div className="dropdown-menu px-3" aria-labelledby={id}>
+        <div
+          className="dropdown-menu options__dropdown px-3"
+          aria-labelledby={id}
+        >
           {children}
         </div>
       </div>
