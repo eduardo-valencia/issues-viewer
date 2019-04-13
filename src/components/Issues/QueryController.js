@@ -32,7 +32,9 @@ export class QueryController extends Component {
   // Methods that build parameters
   makeLabelsFilters = () => {
     const { selectedLabels } = this.state.filters
-    return makeCustomParam('labels', JSON.stringify(selectedLabels))
+    if (selectedLabels.length) {
+      return makeCustomParam('labels', JSON.stringify(selectedLabels))
+    }
   }
 
   makeStatusFilter = () => {
@@ -98,6 +100,10 @@ export class QueryController extends Component {
     getIssues(paramsAsPartOfQuery)
   }
 
+  componentDidMount() {
+    this.getIssuesWithParams()
+  }
+
   getAndAppendIssuesWithParams = () => {
     const { getAndAppendIssues } = this.props
     const paramsAsString = makeCustomParams(this.buildParamsList(true))
@@ -106,7 +112,8 @@ export class QueryController extends Component {
 
   render() {
     const { filters, sortingOptions } = this.state
-    const { labels, issues, pageInfo } = this.props
+    const { labels, issues, pageInfo, hasLoaded } = this.props
+    if (!hasLoaded) return <p>Loading...</p>
     return (
       <>
         <SearchOptions

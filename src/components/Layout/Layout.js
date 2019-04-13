@@ -15,15 +15,18 @@ export class Layout extends Component {
     } = this.props
     return (
       <>
-        <NavBar showSearchBar={showSearchBar}>
-          {navBarContents ? navBarContents : null}
-        </NavBar>
-        <div className="container py-5 px-4">
-          <h1 id="page-title">{title}</h1>
-          {subtitle ? <h2 id="page-subtitle">{subtitle}</h2> : null}
-          <div className="my-5">{children}</div>
+        <div id="main-content">
+          <NavBar showSearchBar={showSearchBar}>
+            {navBarContents ? navBarContents : null}
+          </NavBar>
+          <div className="container py-5 px-4">
+            <h1 id="page-title">{title}</h1>
+            {subtitle ? <h2 id="page-subtitle">{subtitle}</h2> : null}
+            <div className="my-5">{children}</div>
+          </div>
+          {outsideContainer ? outsideContainer : null}
+          <div className="pushForFooter" />
         </div>
-        {outsideContainer ? outsideContainer : null}
         <Footer />
       </>
     )

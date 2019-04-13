@@ -23,7 +23,7 @@ export class Result extends Component {
 Result.propTypes = {
   repoName: PropTypes.string.isRequired,
   selectRepo: PropTypes.func.isRequired,
-  selectedRepo: PropTypes.string.isRequired
+  selectedRepo: PropTypes.string
 }
 
 export default Result

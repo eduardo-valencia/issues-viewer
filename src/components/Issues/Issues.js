@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Layout from '../Layout/Layout'
 import getData from '../common/requests'
 import '../../scss/Issues/utilities/manifest.scss'
-// import getExampleQuery from './exampleQuery'
 import QueryController from './QueryController'
 
 export class Issues extends Component {
@@ -91,15 +90,7 @@ export class Issues extends Component {
     useData = this.addDataToState
   ) => {
     const query = this.getQuery(getLabels, params)
-    getData(query, useData, getLabels)
-  }
-
-  // addStaticData = () => {
-  //   this.addDataToState(getExampleQuery())
-  // }
-
-  componentDidMount() {
-    this.getIssues()
+    getData(query, useData)
   }
 
   appendIssuesFromData = data => {
@@ -116,21 +107,18 @@ export class Issues extends Component {
   }
 
   render() {
-    const { hasLoaded, issues, pageInfo, labels } = this.state
+    const { issues, pageInfo, labels, hasLoaded } = this.state
     return (
       <Layout title="Issues" subtitle={this.getPageSubtitle()}>
         <h2>Issues List</h2>
-        {hasLoaded ? (
-          <QueryController
-            getIssues={this.getIssues}
-            labels={labels}
-            issues={issues}
-            pageInfo={pageInfo}
-            getAndAppendIssues={this.getAndAppendIssues}
-          />
-        ) : (
-          <p className="text-white mt-3">Loading...</p>
-        )}
+        <QueryController
+          getIssues={this.getIssues}
+          labels={labels}
+          issues={issues}
+          pageInfo={pageInfo}
+          getAndAppendIssues={this.getAndAppendIssues}
+          hasLoaded={hasLoaded}
+        />
       </Layout>
     )
   }

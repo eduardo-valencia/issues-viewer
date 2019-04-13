@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Layout from '../Layout/Layout'
-import getDetailData from './detailData'
 import Metadata from './Metadata'
 import '../../scss/Detail/utilities/manifest.scss'
 import Description from './Description'
@@ -15,16 +14,8 @@ export class Detail extends Component {
     data: null
   }
 
-  setStaticData = () => {
-    this.setState(prevState => ({
-      ...prevState,
-      data: getDetailData().data.node
-    }))
-  }
-
   componentDidMount() {
-    this.setStaticData()
-    // this.getIssueData()
+    this.getIssueData()
   }
 
   getSubtitle = () => {

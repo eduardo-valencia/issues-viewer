@@ -10,7 +10,7 @@ export class IssueInfo extends Component {
     return (
       <div className="dropdown dropleft">
         <button
-          className="btn"
+          className="btn btn-dark"
           type="button"
           id="issueInfoBtn"
           data-toggle="dropdown"
