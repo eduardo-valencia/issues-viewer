@@ -7,7 +7,7 @@ export class OptionsContainer extends Component {
     return (
       <div className="dropdown mr-3">
         <button
-          className="btn dropdown-toggle option btn-c-primary"
+          className="btn dropdown-toggle option btn-c-primary mb-3"
           type="button"
           id={id}
           data-toggle="dropdown"

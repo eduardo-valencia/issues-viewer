@@ -7,3 +7,12 @@
     font-size: map-get($font-sizes, 'giant');
   }
 }
+
+#page-subtitle {
+  font-size: map-get($font-sizes, 'taller');
+  font-family: 'Montserrat', sans-serif;
+
+  @media (min-width: map-get($breakpoints, 'medium')) {
+    font-size: map-get($font-sizes, 'big');
+  }
+}

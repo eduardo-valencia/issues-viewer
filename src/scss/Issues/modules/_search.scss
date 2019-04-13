@@ -12,4 +12,11 @@
 
 .search__btn {
   @extend %queryFont;
+
+  &Sm {
+    margin-top: 1em;
+    @media (min-width: map-get($breakpoints, 'medium')) {
+      margin-top: 0;
+    }
+  }
 }

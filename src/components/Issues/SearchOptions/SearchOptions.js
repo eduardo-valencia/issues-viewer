@@ -14,7 +14,7 @@ export class SearchOptions extends Component {
       getIssues
     } = this.props
     return (
-      <div className="d-flex justify-content-between justify-content-md-start">
+      <div className="d-flex flex-column flex-md-row justify-content-md-start">
         <Filters
           labels={labels}
           updateIssues={getIssues}

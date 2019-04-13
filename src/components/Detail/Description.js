@@ -6,7 +6,7 @@ export class Description extends Component {
   getDescriptionContent = () => {
     const { data } = this.props
     if (data) {
-      return <ReactMarkdown source={data.body} />
+      return <ReactMarkdown source={data.body} className="text-white" />
     }
     return <p>Loading description...</p>
   }

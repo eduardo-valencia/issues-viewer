@@ -26,7 +26,7 @@ export class Search extends Component {
 
   getButtonClasses = () => {
     const { size } = this.props
-    return size === 'large' ? 'px-5 py-2 mt-4' : ''
+    return size === 'large' ? 'px-5 py-2 mt-4' : 'search__btnSm'
   }
 
   render() {

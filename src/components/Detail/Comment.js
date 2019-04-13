@@ -18,7 +18,7 @@ export class Comment extends Component {
           <p className="comment__name text-uppercase">{author}</p>
           {this.getDate()}
         </div>
-        <ReactMarkdown source={content} />
+        <ReactMarkdown source={content} className="text-white" />
       </div>
     )
   }

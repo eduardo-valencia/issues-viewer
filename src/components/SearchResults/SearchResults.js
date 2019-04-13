@@ -101,8 +101,8 @@ export class SearchResults extends Component {
       <Layout
         title={title}
         outsideContainer={<Buttons selectedRepo={selected} />}
+        subtitle="Please select your project:"
       >
-        <h2 className="page__subheading">Please select your project.</h2>
         {this.createResultsIfDataAvailable()}
       </Layout>
     )

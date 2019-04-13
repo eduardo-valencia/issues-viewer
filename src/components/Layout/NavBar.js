@@ -18,11 +18,11 @@ export default function NavBar(props) {
       >
         <span className="navbar-toggler-icon" />
       </button>
-      <div className="collapse navbar-collapse" id="navbar">
+      <div className="collapse navbar-collapse navbar-expand-md" id="navbar">
         <p className="navbar-brand mb-0 py-0">Issues Viewer</p>
         <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
           <li className="nav-item">
-            <Link className="nav-link py-0" to="/">
+            <Link className="nav-link my-2" to="/">
               Home
             </Link>
           </li>
