@@ -1,68 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# Issues Viewer for Github
+This is a basic web application to view issues for repositories on Github.
+## Features
+- Search for any publicly accessible repository.
+- View the issues for the repository.
+- Filter and sort the issues.
+- Click on an issue to view its details and comments.
+## Installation
+1. **Clone the repository.** Instructions for cloning can be found [here](https://help.github.com/en/articles/cloning-a-repository). Navigate to the repository using `cd <folder_name>`.
+2. **Obtain a personal access token.** You can create a token in the Github settings page [here](https://github.com/settings/tokens), and it doesn’t need any permissions.
+3. **Add the token.** The app needs to know what the token is. To do this, navigate to the top-level `settings.js` file. Paste your token in between the quotes. Make sure to save!
+4. **Run the app.** The final step is to run the app. Use `npm start` in the terminal to do so.
+## Usage
+Using the app is very simple. Use the following to view the issues for a repository:
+1. Search for a repository in the search bar. You will get a list of repositories that match your query.
+2. Select a repository. Click on a repository and click the “Select” button at the bottom to select it.
+3. You will now see a list of issues. You can click on an issue on its title for more details.
+Demo:
+![](#)(demo.gif)
